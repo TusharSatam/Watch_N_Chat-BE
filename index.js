@@ -5,7 +5,7 @@ const http = require("http");
 const socketIo = require("socket.io");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require('dotenv').config()
+require("dotenv").config();
 const { logger } = require("./src/middleware/winston.middleware");
 const { dbConnection } = require("./src/db/config");
 
@@ -14,7 +14,7 @@ const server = http.createServer(app);
 // Create a Socket.io instance with CORS configuration
 const io = socketIo(server, {
   cors: {
-    origin: ["http://localhost:3000",  process.env.FRONTEND_URL],
+    origin: ["http://localhost:3000", "https://watch-n-chat-fe.vercel.app/"],
     methods: ["GET", "POST"],
     allowedHeaders: ["my-custom-header"],
     credentials: true,
@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 5000;
 // Use cors middleware
 app.use(
   cors({
-    origin: ["http://localhost:3000", process.env.FRONTEND_URL],
+    origin: ["http://localhost:3000", "https://watch-n-chat-fe.vercel.app/"],
   })
 );
 // Connect to MongoDB
