@@ -14,7 +14,7 @@ const server = http.createServer(app);
 // Create a Socket.io instance with CORS configuration
 const io = socketIo(server, {
   cors: {
-    origin: ["http://localhost:3000", "https://watch-n-chat-fe.vercel.app/"],
+    origin: ["http://localhost:3000", "https://watch-n-chat-fe.vercel.app"],
     methods: ["GET", "POST"],
     allowedHeaders: ["my-custom-header"],
     credentials: true,
@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 5000;
 // Use cors middleware
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://watch-n-chat-fe.vercel.app/"],
+    origin: ["http://localhost:3000", "https://watch-n-chat-fe.vercel.app"],
   })
 );
 // Connect to MongoDB
