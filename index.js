@@ -5,6 +5,7 @@ const http = require("http");
 const socketIo = require("socket.io");
 const mongoose = require("mongoose");
 const cors = require("cors");
+require('dotenv').config()
 const { logger } = require("./src/middleware/winston.middleware");
 const { dbConnection } = require("./src/db/config");
 
